@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import RenderQuestions from './components/ShowQuestions/RenderQuestions.js';
+import Welcome from './components/Welcome/Welcome.js';
 
-function App() {
+const App =() => {
+  const [startQuestions,setStart] = React.useState(false);
+  const callQuestions = () => {
+    setStart(true);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     {startQuestions
+     ? <RenderQuestions />
+     :<Welcome onStart={callQuestions}/>}
+    </>
   );
 }
 
