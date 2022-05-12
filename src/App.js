@@ -1,17 +1,15 @@
 import React from 'react';
-import RenderQuestions from './components/ShowQuestions/RenderQuestions.js';
-import Welcome from './components/Welcome/Welcome.js';
+import MainHandle from './components/MainRender/MainHandle.js';
+import Home from './components/Home/Home.js';
 
 const App =() => {
-  const [startQuestions,setStart] = React.useState(false);
-  const callQuestions = () => {
-    setStart(true);
-  }
+  const [startGame,setStartGame] = React.useState(false);
+  
   return (
     <>
-     {startQuestions
-     ? <RenderQuestions />
-     :<Welcome onStart={callQuestions}/>}
+     {startGame
+     ? <MainHandle restartGame={() => setStartGame(false)}/>
+     :<Home onStart={() => setStartGame(true)}/>}
     </>
   );
 }
