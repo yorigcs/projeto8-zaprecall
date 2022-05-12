@@ -6,34 +6,10 @@ import Answer from "./AnswerHandle";
 import Logo from '../Home/logo.svg';
 import './mainHandle.css';
 
-const questions = [
-    {
-        question: 'O que é JSX?',
-        answer: 'Uma extensão de linguagem do JavaScript',
-        id: 0
-    },
-    {
-        question: ' O React é:',
-        answer: 'Uma biblioteca JavaScript para construção de interfaces',
-        id: 1
-    },
-    {
-        question: ' Componentes devem iniciar com:',
-        answer: 'letra maiúscula',
-        id: 2
-    }
-];
 
-const shuffle = (array) => {
-    for(let i = 0; i<array.length;i++){
-        let j = Math.floor(Math.random() * (i+1));
-        [array[i],array[j]] = [array[j],array[i]];
-    }
-};
 
-shuffle(questions);
 
-const MainHandle = ({restartGame,minCorrect}) => {
+const MainHandle = ({restartGame,questions,minCorrect}) => {
    
     let cnt = 0;
     const [answerNum,setAnswerNum] = React.useState(0);

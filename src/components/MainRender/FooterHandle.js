@@ -9,7 +9,6 @@ const FooterHandlerIcon = ({icons}) => (
 
 const FooterHandleEndGame = ({icons,minCorrect}) => {
     const isValid = icons.filter( icon => (icon === Correct || icon === Maybe)).length >= minCorrect;
-    console.log(isValid);
 
     if(!isValid) {
         return (
