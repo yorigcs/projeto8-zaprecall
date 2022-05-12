@@ -33,7 +33,7 @@ const shuffle = (array) => {
 
 shuffle(questions);
 
-const MainHandle = ({restartGame}) => {
+const MainHandle = ({restartGame,minCorrect}) => {
    
     let cnt = 0;
     const [answerNum,setAnswerNum] = React.useState(0);
@@ -67,7 +67,7 @@ const MainHandle = ({restartGame}) => {
             <footer className="progress">
 
                 {answerNum === questions.length
-                ? <FooterHandleEndGame icons={icons} />
+                ? <FooterHandleEndGame icons={icons} minCorrect={minCorrect}/>
                 : <></>}
 
                 <span>{answerNum}/{questions.length} CONCLUÍDOS</span>

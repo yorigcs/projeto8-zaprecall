@@ -1,4 +1,5 @@
-import Wrong from './assets/wrong.svg';
+import Correct from './assets/correct.svg';
+import Maybe from './assets/maybe.svg';
 import Sad from './assets/sad.svg';
 import Happy from './assets/happy.svg';
 
@@ -6,8 +7,11 @@ const FooterHandlerIcon = ({icons}) => (
     <img src={icons} alt={icons}></img>
 );
 
-const FooterHandleEndGame = ({icons}) => {
-    if(icons.includes(Wrong)) {
+const FooterHandleEndGame = ({icons,minCorrect}) => {
+    const isValid = icons.filter( icon => (icon === Correct || icon === Maybe)).length >= minCorrect;
+    console.log(isValid);
+
+    if(!isValid) {
         return (
             <div className="result">
                 <div>
@@ -33,7 +37,7 @@ const FooterHandleEndGame = ({icons}) => {
 const FooterHandleRestartGame = ({restartGame}) => {
 
     return (
-        <button type='button' onClick={restartGame}>Reiniciar</button>
+        <button type='button' onClick={restartGame}>REINICIAR RECALL</button>
     );
 }
 

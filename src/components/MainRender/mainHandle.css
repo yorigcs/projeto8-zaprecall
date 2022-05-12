@@ -28,6 +28,19 @@
     
 }
 
+.progress button{
+    font-family: 'Recursive', sans-serif;
+    width: 168px;
+    height: 32px;
+    color: #FFFFFF;
+    background-color: #FB6B6B;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 15px;
+    cursor: pointer;
+    
+}
+
 .main {
     display: flex;
     flex-direction: column;

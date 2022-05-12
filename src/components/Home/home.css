@@ -31,3 +31,26 @@
     font-weight: 400;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
 }
+
+.home input {
+   
+    font-family: 'Recursive', sans-serif;
+    width: 246px;
+    height: 42px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.home input::-webkit-outer-spin-button,
+.home input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.home input[type=number] {
+  -moz-appearance: textfield;
+}
