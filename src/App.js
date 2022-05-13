@@ -10,7 +10,7 @@ const App =() => {
     <>
      {startGame
      ? <MainHandle restartGame={() => setStartGame(false)} minCorrect={minCorrect} questions={deck}/>
-     :<Home onStart={() => setStartGame(true)} minCorrect={minCorrect} setMinCorrect={setMinCorrect} setDeck={setDeck} />}
+     :<Home onStart={() => setStartGame(true)} minCorrect={minCorrect} setMinCorrect={setMinCorrect} setDeck={setDeck} questions={deck} />}
     </>
   );
 }

@@ -57,8 +57,8 @@ const shuffle = (array) => {
 };
 
 
-const Home = ({onStart,setMinCorrect,minCorrect,setDeck}) => {
-    
+const Home = ({onStart,setMinCorrect,minCorrect,setDeck,questions}) => {
+
     const handleValueZaps = (event) => {
         setMinCorrect(event.target.value);
         
@@ -80,14 +80,14 @@ const Home = ({onStart,setMinCorrect,minCorrect,setDeck}) => {
         <div className='home'>
             <img src={Logo} alt ={Logo}></img>
             <span>ZapRecall</span>
-            <select id="cars" name="cars">
-                <option selected disabled>Escolha seu deck</option>
+            <select defaultValue="">
+                <option value="" disabled ={true}>Escolha seu deck</option>
                 <option onClick={handleValueDeck} value="questionsReact">React</option>
                 <option onClick={handleValueDeck} value="questionsATG">Against the Gods</option>
             </select>
             
             <input type='number' value={minCorrect} placeholder='Digite sua meta de zaps...' onChange={handleValueZaps}></input>
-            <button type='button' disabled={minCorrect < 1 ? true : false} onClick={onStart}>Iniciar Recall!</button>
+            <button type='button' disabled={((minCorrect < 1) || (questions === ''))  ? true : false} onClick={onStart}>Iniciar Recall!</button>
         </div>
     );
 };

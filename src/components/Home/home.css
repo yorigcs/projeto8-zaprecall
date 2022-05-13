@@ -54,3 +54,14 @@
 .home input[type=number] {
   -moz-appearance: textfield;
 }
+
+.home select {
+    width: 246px;
+    height: 42px;
+    background-color: #FFFFFF;
+    border: none;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding: 10px;
+    color: #ADADAD;
+}
