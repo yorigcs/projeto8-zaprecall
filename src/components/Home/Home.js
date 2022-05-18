@@ -78,12 +78,12 @@ const Home = ({onStart,setMinCorrect,minCorrect,setDeck,questions}) => {
     
     return (
         <div className='home'>
-            <img src={Logo} alt ={Logo}></img>
+            <img  src={Logo} alt ={Logo}></img>
             <span>ZapRecall</span>
-            <select defaultValue="">
+            <select onChange={handleValueDeck} defaultValue="">
                 <option value="" disabled ={true}>Escolha seu deck</option>
-                <option onClick={handleValueDeck} value="questionsReact">React</option>
-                <option onClick={handleValueDeck} value="questionsATG">Against the Gods</option>
+                <option  value="questionsReact">React</option>
+                <option  value="questionsATG">Against the Gods</option>
             </select>
             
             <input type='number' value={minCorrect} placeholder='Digite sua meta de zaps...' onChange={handleValueZaps}></input>
